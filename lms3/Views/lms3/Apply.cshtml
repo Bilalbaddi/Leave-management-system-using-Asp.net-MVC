@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "Apply";
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 50);
+}
+<head>
+    <style>
+        ammar {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        button {
+            background-color: #16ed1d;
+            color: #fffffff8;
+            padding: 15px 35px;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button {
+            border-radius: 4px 30%;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>
+        <b>
+            Leave Approval Page
+        </b>
+    </h1>
+    <div>
+        <table class="ammar" border="1" align="center">
+            <th>applied leave</th>
+            <td>
+                @grid.GetHtml(columns: new[]
+                        {
+                       grid.Column("empid"),
+                       grid.Column("leave_mst"),
+                       grid.Column("no_of_days"),
+                       grid.Column("from_days"),
+                       grid.Column("To_date"),
+                       grid.Column("discrip"),
+                       grid.Column("nam"),
+                       });
+            </td>
+        </table>
+        <br />
+    </div>
+
+
+    <form method="post" action="/lms3/Approve" autocomplete="on">
+        <div class="card">
+
+
+            <center>
+                <label for="empid">Employee ID:</label>
+                <input type="text" id="empid" name="empid" class="input" required>
+
+                <br />
+                <br />
+
+
+                <!-- Your existing HTML content -->
+                <!-- Button for page navigation -->
+                <button onclick="window.location.href='@Url.Action("Approve", "lms3")'">Approve</button>
+
+            </center>
+
+
+        </div>
+    </form>
+    <form method="post" action="/lms3/Reject" autocomplete="on">
+        <div class="card">
+
+
+            <center>
+                <label for="empid">Employee ID:</label>
+                <input type="text" id="empid" name="empid" class="input" required>
+
+                <br />
+                <br />
+
+
+                <!-- Your existing HTML content -->
+                <!-- Button for page navigation -->
+                <button onclick="window.location.href='@Url.Action("Reject", "lms3")'">Reject</button>
+
+            </center>
+
+
+        </div>
+
+        <div class="card">
+
+            <center>
+                <!-- Your existing HTML content -->
+                <!-- Button for page navigation -->
+                <button onclick="window.location.href='@Url.Action("Admindashboard", "lms3")'">Back</button>
+
+            </center>
+        </div>
+    </form>
+</body>

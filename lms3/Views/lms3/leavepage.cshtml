@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewBag.Title = "leavepage";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            padding: 8px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .btnbilal {
+            text-align: center;
+            margin-top: 10%;
+            border: none;
+            border-radius: 4px;
+            padding: 2%;
+            background: black;
+            color: #fff;
+            font-weight: 600;
+            width: 25%;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+       
+
+        function updateSum() {
+            var from_days = new Date(document.getElementById("from_days").value);
+            var To_date = new Date(document.getElementById("To_date").value);
+
+            var timeDifference = To_date.getTime() - from_days.getTime();
+            var daysDifference = timeDifference / (1000 * 3600 * 24);
+
+            document.getElementById("no_of_days").value =  daysDifference;
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Leave Application</h1>
+    <form id="leave_form" action="leaveapplication" autocomplete="on">
+        <label for="empid">Employee ID:</label>
+        <input type="text" id="empid" name="empid" required>
+        <br>
+
+        <label for="nam">Employee Name:</label>
+        <input type="text" id="nam" name="nam" required>
+
+
+        <label for="leave_mst">Leave Type:</label>
+        <select id="leave_mst" name="leave_mst" required>
+            <option value="casual">Casual Leave</option>
+            <option value="medical">Medical Leave</option>
+            <option value="earned">Earned Leave</option>
+            <option value="maternity">Maternity leave</option>
+            <option value="special">Special leave</option>
+        </select>
+        <br>
+
+
+        <label for="from_days">From Date:</label>
+        <input type="date" id="from_days" name="from_days"  required onchange="updateSum()" >
+        <br>
+
+        <label for="To_date">To Date:</label>
+        <input type="date" id="To_date" name="To_date"  required onchange="updateSum()">
+        <br>
+
+        <label for="no_of_days">Number of Days:</label>
+        <input type="number" id="no_of_days" name="no_of_days" readonly>
+        <br>
+
+        <label for="discrip">Description:</label>
+        <textarea id="discrip" name="discrip" rows="4" cols="50" required></textarea>
+        <br>
+
+        <br>
+        <center>
+            <button class=" buttongreen" type="submit">Apply</button>
+        </center>
+    </form>
+    
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+

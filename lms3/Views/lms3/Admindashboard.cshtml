@@ -1,0 +1,183 @@
+﻿
+@{
+    ViewBag.Title = "Admindashboard";
+
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+
+        .card {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #007A6E;
+            padding: 10px 0;
+        }
+
+        .btnbilal {
+            text-align: center;
+            margin-top: 10%;
+            border: none;
+            border-radius: 4px;
+            padding: 2%;
+            background: black;
+            color: red;
+            font-weight: 600;
+            width: 25%;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+            nav ul li {
+                display: inline;
+            }
+
+                nav ul li a {
+                    text-decoration: none;
+                    color: #fff;
+                    padding: 10px 20px;
+                    display: inline-block;
+                    cursor: pointer;
+                }
+
+                    nav ul li a:hover {
+                        background-color: #005A53;
+                    }
+
+        button {
+            background-color: #4b8dc0;
+            color: #fffffff8;
+            padding: 10px 20px;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button {
+            border-radius: 4px 30%;
+        }
+    </style>
+</head>
+<body>
+        <header>
+            <h1>Admin Dashboard</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="https://localhost:44322/lms3/Landing">Home</a> | </li>
+                <li><a href="#">Profile</a> | </li>
+                <li><a href="https://localhost:44322/lms3/Second">Leave Balance</a> |</li>
+                <li> <a href="@Url.Action("Index", "lms3")">Logout</a> |</li>
+                <li> <a href="https://localhost:44322/lms3/leavepage">Apply For Leave</a> |</li>
+                <li> <a href="@Url.Action("Apply", "lms3")">Apply </a> |</li>
+
+
+            </ul>
+        </nav>
+
+
+        <section>
+            <div class="card">
+                <h2>
+                    Welcome  @Session["username"]
+                    <br />
+                    Your Empid is @Session["Empid"]
+
+                </h2>
+
+                <p>Your employee dashboard content goes here.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://paysquare.com/wp-content/uploads/2023/01/leave-management-system-500x500-1.png" />
+            </div>
+            <form method="post" action="/lms3/Second" autocomplete="on">
+
+                <div class="card">
+
+
+
+
+                    <center>
+                        <label for="emp_lb_id">Employee ID:</label>
+                        <input type="text" id="emp_lb_id" name="emp_lb_id" class="input" required>
+
+                        <br />
+                        <br />
+
+
+                        <!-- Your existing HTML content -->
+                        <!-- Button for page navigation -->
+                        <button onclick="window.location.href='@Url.Action("Second", "lms3")'">Checking laeve balance</button>
+
+                    </center>
+
+                </div>
+            </form>
+            
+            
+        </section>
+
+
+
+   
+</body>
+</html>
+

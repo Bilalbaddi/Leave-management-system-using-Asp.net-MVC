@@ -1,0 +1,458 @@
+﻿
+@{
+    ViewBag.Title = "Landing";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        div {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            transition: background-color 1s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid transparent;
+            transition: border-color 1s ease;
+        }
+
+        header {
+            background-color: #d4f25e;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #fdfdfd;
+            overflow: hidden;
+        }
+
+            nav a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 20px;
+                text-decoration: none;
+            }
+
+                nav a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+
+        nav {
+            background-color: #f1f45a;
+            padding: 10px 0;
+        }
+
+
+            nav ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+
+                nav ul li {
+                    display: inline;
+                }
+
+                    nav ul li a {
+                        text-decoration: none;
+                        color: #fff;
+                        padding: 10px 20px;
+                        display: inline-block;
+                        cursor: pointer;
+                    }
+
+                        nav ul li a:hover {
+                            background-color: #005A53;
+                        }
+
+        section {
+            padding: 50px;
+            background-color: #fff;
+            border-radius: 50px;
+            box-shadow: 0px 0px 60px purple;
+            margin-bottom: 60px;
+            margin-top: 60px;
+        }
+
+        button {
+            background-color: #4b8dc0;
+            color: #fffffff8;
+            padding: 10px 20px;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button {
+            border-radius: 4px 30%;
+        }
+
+
+        section h2 {
+            color: #00635D;
+            text-align: center;
+        }
+
+        section h3 {
+            color: #00635D;
+            text-align: center;
+        }
+
+        section h4 {
+            color: #00635D;
+            text-align: center;
+        }
+
+        section p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        section ul {
+            padding-left: 20px;
+        }
+
+        footer {
+            background-color: #00635D;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+            footer p {
+                margin: 0;
+            }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: border-color 1s ease;
+        }
+
+            .slideshow-container img {
+                width: 100%;
+                height: auto;
+                transition: transform 1s ease;
+            }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+            .prev:hover, .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+        .btnbilal {
+            float: right;
+            margin-top: 10%;
+            border: none;
+            border-radius: 1.5rem;
+            padding: 2%;
+            background: #da9090;
+            color: #fff;
+            font-weight: 600;
+            width: 20%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(248, 253, 253);">
+    <header>
+        <h1>Leave Management System</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a onclick="scrollToSection('about')">About</a></li>
+            <li><a onclick="scrollToSection('project')">Project</a></li>
+            <li><a onclick="scrollToSection('features')">Features</a></li>
+            <li><a onclick="scrollToSection('team')">Team</a></li>
+            <li><a onclick="scrollToSection('contact')">Contact</a></li>
+
+
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="slideshow-container">
+
+            <img class="mySlides " src="https://flamingoapp.com/wp-content/uploads/2022/06/Leave-Management-System.png" style="display: block;">
+            <img class="mySlides" src="https://www.joinhrmatters.com/blog/wp-content/uploads/2022/11/Feature-image-detail-page-banner.jpg" style="display: none;">
+            <img class="mySlides" src="https://ubsapp.com/wp-content/uploads/2022/12/Online-Leave-Management-System.png" style="display: none;">
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <br />
+            <br />
+
+            <center>
+                <!-- Your existing HTML content -->
+                <!-- Button for page navigation -->
+                <button onclick="window.location.href='@Url.Action("Index", "lms3")'">Go to Another Page</button>
+
+            </center>
+
+        </div>
+        <section id="about">
+            <h2>Anjuman-I-Islam's <br>Abdul Razzak Kalsekar Polytechnic Panvel</h2>
+            <h2>Department: Automation And Robotics</h2>
+            <br>
+            <h3 style="text-align: left;">ABOUT INSTITUTE:</h3>
+            <p style="font-size: medium;font-weight: 800;">
+                Kalsekar Polytechnic, located in Panvel, is an esteemed institution offering
+                diploma programs in engineering and technology.Renowned for its state-of-the-art facilities, experienced faculty,
+                and industry-relevant curriculum,Kalsekar Polytechnic provides students with a comprehensive
+                education to excel in their chosen fields and pursue successful careers.
+            </p>
+            <h3 style="text-align: left;">INSTITUTE VISION:</h3>
+            <p style="font-size: medium;font-weight: 800;">To be the most sought after Polytechnic that others would wish to emulate .</p>
+            <h3 style="text-align: left;">DEPARTMENT VISION:</h3>
+            <p style="font-size: medium;font-weight: 800;">
+                Empowering innovation through cutting-edge automation and robotics to cultivate
+                future leaders in
+                technology and drive transformative advancements in industry
+            </p>
+            <h3 style="text-align: left;">MISSION:</h3>
+            <p style="font-size: medium;font-weight: 800;">Creating Exuberant Technical professionals . </p>
+
+        </section>
+        <section id="project">
+            <h2>About our project</h2>
+            <p style="font-size: medium;font-weight: 800;">
+                A Leave Management System (LMS) is a software solution designed to streamline
+                and automate the process of managing employee leave requests within an organization. This project typically involves the
+                development of a web-based application that allows employees to submit leave requests online, managers to approve or deny
+                requests, and HR administrators to track and manage all aspects of employee leave
+                The system often includes features such as a centralized dashboard for easy access to leave information, customizable leave
+                policies to accommodate various types of leave (such as vacation, sick leave, and personal leave), and automated email
+                notifications to keep all stakeholders informed throughout the leave request process.
+                <br>
+            </p>
+            <div style="text-align: center;">
+                <img src="https://cdn.sketchbubble.com/pub/media/catalog/product/optimized1/d/8/d8a9b8f4ebb8e19461526bb353e579fbe613254a2dc19288afaa515d967f2e32/employee-management-system-mc-slide6.png" width="400" height="300">
+            </div>
+            <p style="font-size: medium;font-weight: 800;">
+                <br>
+                Additionally, an LMS may offer reporting and analytics capabilities to help HR professionals analyze leave trends,
+                track employee attendance, and ensure compliance with labor laws and company policies. Integration with other HR systems,
+                such as payroll and attendance tracking, is also common to ensure data consistency and efficiency.
+                Overall, a Leave Management System project aims to improve organizational efficiency, reduce administrative burden,
+                and enhance employee satisfaction by providing a seamless and transparent process for managing leave requests.
+                <br>
+            </p>
+            <div style="text-align: center;">
+                <img src="https://www.officetimer.com/wp-content/uploads/2019/11/Leave-Management-System.png" width="400" height="300">
+            </div>
+            <p style="font-size: medium;font-weight: 800;">
+                A Leave Management System (LMS) project involves developing a web-based application to automate and streamline the process of
+                managing employee leave requests. This system allows employees to submit leave requests online, enables managers to approve
+                or deny requests, and assists HR administrators in tracking and managing all aspects of employee leave. With features like
+                customizable leave policies, centralized dashboards, and automated notifications, the LMS enhances organizational efficiency,
+                reduces administrative workload, and ensures compliance with company policies and labor laws. Integration with other
+                HR systems facilitates seamless data flow and enhances overall employee satisfaction.
+            </p>
+
+        </section>
+        <section id="features">
+            <h2>Key Features</h2>
+            <ul style="font-size: medium;font-weight: 800;">
+                <li>Effortless Leave Requests</li>
+                <li>Automated Approval Workflow</li>
+                <li>Real-time Dashboard</li>
+                <li>Leave History Tracking</li>
+                <li>Secure User Authentication</li>
+                <li>Role-based Access Control</li>
+                <li>Comprehensive Reporting and Analytics</li>
+                <br>
+                <br>
+                <br>
+                <div style="text-align: center;">
+                    <img src="https://www.ubackup.com/screenshot/en/others/ssms/smss-logo.png" width="300" height="200">
+                </div>
+                <br>
+                <br>
+
+
+                <li>
+                    MS SQL Server is a widely used relational database management system developed by Microsoft.
+                    It offers robust features for data storage, management, and analysis, including advanced security measures and
+                    seamless integration with other Microsoft products and technologies.
+                </li>
+                <br>
+                <br>
+                <br>
+                <div style="text-align: center;">
+                    <img src="https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/overview/asp-net-mvc-overview/_static/image1.png" width="300" height="200">
+                </div>
+                <br>
+                <br>
+
+                <li>
+                    MVC (Model-View-Controller) architecture is a software design pattern that separates an application into
+                    three interconnected components: the Model (data and logic), the View (presentation layer), and
+                    the Controller (handling user input and interaction). This separation enhances modularity, scalability, and
+                    maintainability in software development, facilitating easier collaboration among developers and
+                    efficient code management.
+                </li>
+            </ul>
+        </section>
+
+
+        <section id="team">
+            <h2>TEAM</h2>
+            <br>
+            <br>
+            <table>
+                <tr> Team Member </tr>
+                <br>
+
+            </table>
+            <table>
+                <th style="text-align: justify;">
+                    Ammar Khot<br>
+                    Bilal Baddi<br>
+                    Mohammed Ali Shaikh<br>
+                    Nouman Kalekar
+                </th>
+            </table>
+            <br>
+            <br>
+
+            <table>
+                <tr> <b>Project Guide</b> </tr>
+                <br>
+                <tr><b>Mr.Anwar Patel</b></tr>
+            </table>
+            <br />
+            <br />
+
+
+            <table>
+                <tr> <b>HOD</b> </tr>
+                <br>
+                <tr><b>Mr.Zeeshan Khan</b></tr>
+            </table>
+            <br>
+            <br>
+            <br>
+            <table>
+                <tr> <b>PRINCIPAL</b> </tr>
+                <br>
+                <tr><b>Mr.Arif Shaikh</b></tr>
+            </table>
+        </section>
+
+
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p style="font-size: medium;font-weight: 800;">For inquiries or support, feel free to contact us through any of the following channels:</p>
+            <ul style="font-size: medium; font-weight: 800;">
+                <div>
+                    <label for="name">NAME:</label>
+                    <input type="text" id="name" name="name" required><br>
+                </div>
+                <div>
+                    <label for="email">EMAIL:</label>
+                    <input type="text" id="email" name="email" required><br>
+                </div>
+                <div>
+                    <label for="phone">PHONE NO:</label>
+                    <input type="tel" id="phone" name="phone" maxlength="10" required><br>
+                </div>
+                <div>
+                    <label for="feed">FEEDBACK:</label>
+                    <input style="width: 540px;height: 140px;" type="text" id="feed" name="feed"><br>
+                </div>
+                <!--submit button-->
+                <button type="submit" value="submit" formaction="">Submit</button>
+
+            </ul>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Leave Management System</p>
+    </footer>
+
+    <script>
+    var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+
+        setInterval(changeBackgroundColor, 3000);</script>
+</body>
+</html>

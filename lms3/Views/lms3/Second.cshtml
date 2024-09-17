@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Second";
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 50);
+}
+<head>
+    <style>
+        ammar {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        button {
+            background-color: #16ed1d;
+            color: #fffffff8;
+            padding: 15px 35px;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button {
+            border-radius: 4px 30%;
+        }
+
+    </style>
+
+</head>
+<h2>Second</h2>
+<div>
+    <table class="ammar" border="1" align="center">
+        @grid.GetHtml(columns: new[]
+                {
+               grid.Column("emp_lb_id"),
+               grid.Column("Casual"),
+               grid.Column("Earned"),
+               grid.Column("Medical"),
+               grid.Column("Maternity"),
+               grid.Column("Special"),
+               });
+    </table>
+    <br />
+</div>
+
+
+    
+

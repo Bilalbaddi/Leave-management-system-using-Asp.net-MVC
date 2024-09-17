@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewBag.Title = "Registeration Form";
+}
+
+<h2>Registeration Form</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4b8dc0;
+            color: #fffffff8;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btnbilal {
+            text-align: center;
+            margin-top: 10%;
+            border: none;
+            border-radius: 4px;
+            padding: 2%;
+            background: black;
+            color: #fff;
+            font-weight: 600;
+            width: 15%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1> Registration Page </h1>
+        <img src="https://content.jdmagicbox.com/comp/navi-mumbai/80/022p8804480/catalogue/abdul-razzak-kalsekar-polytechnic-new-panvel-navi-mumbai-institutes-1pdbps0.jpg?clr=" height="300" />
+    </header>
+  
+
+    <br />
+    <br />
+
+    <center>
+        <!-- Your existing HTML content -->
+        <!-- Button for page navigation -->
+        <button onclick="window.location.href='@Url.Action("Login", "lms3")'">Login Page</button>
+
+    </center>
+
+
+    <form action="/lms3/register" autocomplete="on">
+        <center>
+
+
+            <label for="name">First name</label>
+            <input type="text" id="fname" name="fname" class="input" required>
+
+            <label for="dept">Department</label>
+            <input type="text" id="dept" name="dept" class="input" required>
+
+            <label for="desig">Designation</label>
+            <input type="text" id="designation" name="designation" class="input" required>
+
+            <label for="gender">Gender</label>
+            <input type="text" id="gender" name="gender" class="input" required>
+
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" class="input" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="pass" name="pass" class="input" required>
+
+            <label for="user_role">User Role</label>
+            <input type="text" id="user_role" name="user_role" class="input" required>
+            <br />
+
+            <button class=" buttongreen" type="submit">Register</button>
+
+            <br />
+            <br />
+            <style>
+                .table {
+                    width: auto;
+                    column-rule-color: red;
+                }
+
+                th, td, table, tr {
+                    padding: 5px;
+                    border: 5px thick;
+                }
+            </style>
+            <table border="1" class="table table-sm">
+                <tr>
+
+                    <th>USER ROLE</th>
+                    <th>USER ID</th>
+
+                </tr>
+                <tr>
+                    <th>Employee</th>
+                    <th>0</th>
+
+                </tr>
+                <tr>
+                    <th>HOD</th>
+                    <th>1</th>
+                </tr>
+            </table>
+
+
+
+        </center>
+    </form>
+
+
+</body>
+</html>
+
